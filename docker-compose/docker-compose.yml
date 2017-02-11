@@ -1,7 +1,7 @@
 version: '2'
 services:
     microservicegatewaystudent-app:
-        image: microservicegatewaystudent
+        image: jreyesromero/microservicegatewaystudent
         external_links:
             - microservicegatewaystudent-mysql:mysql
             - jhipster-registry:registry
@@ -23,7 +23,7 @@ services:
         command: mysqld --lower_case_table_names=1 --skip-ssl
     
     microservicesstudent-app:
-        image: microservicesstudent
+        image: jreyesromero/microservicesstudent
         external_links:
             - microservicesstudent-mysql:mysql
             - jhipster-registry:registry
