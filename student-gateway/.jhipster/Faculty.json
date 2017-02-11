@@ -1,0 +1,31 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "studentFaculty",
+            "otherEntityName": "student",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "faculty"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170211111708",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "faculty",
+    "pagination": "no",
+    "microserviceName": "microServicesStudent",
+    "searchEngine": false
+}

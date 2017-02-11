@@ -1,0 +1,28 @@
+{
+    "microServiceGatewayStudentApp": {
+        "student" : {
+            "home": {
+                "title": "Students",
+                "createLabel": "Create a new Student",
+                "createOrEditLabel": "Create or edit a Student",
+                "search": "Search for Student"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Student {{ id }}?"
+            },
+            "detail": {
+                "title": "Student"
+            },
+            "name": "Name",
+            "surname": "Surname",
+            "faculty": "Faculty"
+        }
+    },
+    "microServicesStudentApp": {
+        "student" : {
+            "created": "A new Student is created with identifier {{ param }}",
+            "updated": "A Student is updated with identifier {{ param }}",
+            "deleted": "A Student is deleted with identifier {{ param }}"
+        }
+    }
+}
