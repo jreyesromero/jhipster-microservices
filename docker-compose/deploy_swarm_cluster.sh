@@ -11,10 +11,10 @@ workers_node=3
 docker-compose pull
 docker-compose bundle
 
+# Execution of create_swarm_mode_cluster.sh script, indicating how many manager nodes
+# and how many workers nodes we want in our cluster.
 source ./create_swarm_mode_cluster.sh $manager_nodes $workers_nodes
 
 
 # Once the cluster has been created, we need to point Docker Cli to swarm master node
 eval $(docker-machine env master1)
-
-
