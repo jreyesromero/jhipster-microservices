@@ -1,7 +1,8 @@
 #!/bin/bash
 # swarm mode using Docker Machine
-managers=$1
-workers=$2
+managers=1
+workers=2
+
 
 # create manager machines
 echo "======> Creating $managers manager machines ...";
