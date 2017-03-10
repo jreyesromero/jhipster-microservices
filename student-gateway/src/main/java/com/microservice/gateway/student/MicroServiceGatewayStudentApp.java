@@ -30,7 +30,7 @@ import java.util.Collection;
 @EnableZuulProxy
 public class MicroServiceGatewayStudentApp {
 
-    private static final Logger log = LoggerFactory.getLogger(MicroServiceGatewayStudentApp.class);
+    private static final Logger logger = LoggerFactory.getLogger(MicroServiceGatewayStudentApp.class);
 
     @Inject
     private Environment env;
@@ -44,14 +44,14 @@ public class MicroServiceGatewayStudentApp {
      */
     @PostConstruct
     public void initApplication() {
-        log.info("Running with Spring profile(s) : {}", Arrays.toString(env.getActiveProfiles()));
+        logger.info("Running with Spring profile(s) : {}", Arrays.toString(env.getActiveProfiles()));
         Collection<String> activeProfiles = Arrays.asList(env.getActiveProfiles());
         if (activeProfiles.contains(Constants.SPRING_PROFILE_DEVELOPMENT) && activeProfiles.contains(Constants.SPRING_PROFILE_PRODUCTION)) {
-            log.error("You have misconfigured your application! It should not run " +
+            logger.error("You have misconfigured your application! It should not run " +
                 "with both the 'dev' and 'prod' profiles at the same time.");
         }
         if (activeProfiles.contains(Constants.SPRING_PROFILE_DEVELOPMENT) && activeProfiles.contains(Constants.SPRING_PROFILE_CLOUD)) {
-            log.error("You have misconfigured your application! It should not" +
+            logger.error("You have misconfigured your application! It should not" +
                 "run with both the 'dev' and 'cloud' profiles at the same time.");
         }
     }
@@ -66,7 +66,7 @@ public class MicroServiceGatewayStudentApp {
         SpringApplication app = new SpringApplication(MicroServiceGatewayStudentApp.class);
         DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();
-        log.info("\n----------------------------------------------------------\n\t" +
+        logger.info("\n----------------------------------------------------------\n\t" +
                 "Application '{}' is running! Access URLs:\n\t" +
                 "Local: \t\thttp://localhost:{}\n\t" +
                 "External: \thttp://{}:{}\n----------------------------------------------------------",
@@ -76,7 +76,7 @@ public class MicroServiceGatewayStudentApp {
             env.getProperty("server.port"));
 
         String configServerStatus = env.getProperty("configserver.status");
-        log.info("\n----------------------------------------------------------\n\t" +
+        logger.info("\n----------------------------------------------------------\n\t" +
         "Config Server: \t{}\n----------------------------------------------------------",
             configServerStatus == null ? "Not found or not setup for this application" : configServerStatus);
     }
